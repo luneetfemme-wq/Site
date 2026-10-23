@@ -21,6 +21,15 @@ if (form) {
     if (!submit) return;
 
     status.textContent = '';
+
+    // Respect required fields and explicit consent before sending any data.
+    // novalidate stays on the form so errors can be controlled here.
+    if (!form.checkValidity()) {
+      form.reportValidity();
+      status.textContent = 'Verifica os campos obrigatórios e o consentimento antes de continuar.';
+      return;
+    }
+
     submit.disabled = true;
     submit.textContent = 'A enviar…';
 
