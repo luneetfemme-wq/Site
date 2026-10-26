@@ -32,9 +32,9 @@ O novo site está preparado para usar estes ficheiros, guardados em `public/asse
 | `femme-campanha.jpg` | Cartaz/campanha «Já conheces as tuas mamas?» |
 | `femme-malhas.jpg` | Foto das malhas coloridas |
 | `femme-look.jpg` | Look zebra + cachecol rosa |
-| `femme-detalhe.jpg` | Pormenores da marca |
+| `femme-stand.jpg` | Fotografia real do stand da Lune et Femme |
 
-As imagens são opcionais. **Sem elas, aparecem composições editoriais da marca, em vez de fotografias partidas ou blocos vazios.** Assim que colocares uma imagem com o nome indicado, o site apresenta-a automaticamente.
+As fotografias são opcionais durante os testes. **A galeria só é apresentada quando existir pelo menos uma imagem real.** Quando colocares os quatro JPG na pasta indicada, a composição fotográfica substitui a antiga maquete tipográfica automaticamente. Para melhor resultado, carrega os quatro ficheiros numa só alteração.
 
 Para adicionar imagens no GitHub:
 1. Abre https://github.com/luneetfemme-wq/Site .
