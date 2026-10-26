@@ -47,7 +47,7 @@ if (preview) {
         figure.prepend(img);
       }
       img.setAttribute('data-mvp-image', '');
-      img.setAttribute('loading', 'lazy');
+      img.setAttribute('loading', 'eager'); // load while the containing section is initially hidden
       img.alt = 'Captura do protótipo da Lune — ' + item.title;
 
       let caption = figure.querySelector('figcaption');
