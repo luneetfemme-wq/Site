@@ -1,7 +1,7 @@
 // Lune media: photos are optional, and prototype previews only appear if real files exist.
 document.querySelectorAll('img[data-photo]').forEach((img) => {
   const card = img.closest('.femme-photo');
-  const show = () => card?.classList.add('has-image');
+  const show = () => { card?.classList.add('has-image'); document.querySelector('#universo')?.classList.add('has-real-photos'); };
   img.addEventListener('load', show);
   img.addEventListener('error', () => card?.classList.remove('has-image'));
   if (img.complete && img.naturalWidth > 0) show();
