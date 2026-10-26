@@ -324,3 +324,19 @@ h1 em,h2 em{font-weight:400}h2{letter-spacing:-.02em}
   .universe.has-real-photos .universe-gallery{grid-template-rows:370px 175px 165px}
   .universe.has-real-photos .photo-detail img{object-position:50% 42%}
 }
+
+
+/* Accessibility polish for narrow viewports and the beta form */
+.signup-form .consent{font-size:13px;line-height:1.6;align-items:flex-start;gap:11px}
+.signup-form .consent input[type="checkbox"]{width:19px;height:19px;flex:0 0 19px;min-width:19px;accent-color:var(--l-plum);margin-top:2px}
+.signup-form .consent span{flex:1}
+.signup-form .privacy-link{display:inline-flex;align-items:center;min-height:38px;font-size:13px}
+.signup-form .form-note{font-size:12px;line-height:1.6}
+.signup-form .form-status:not(:empty){margin:8px 0;line-height:1.5;font-size:13px}
+:is(a,button,input,select,summary):focus-visible{outline:3px solid #C2187A;outline-offset:3px}
+@media(max-width:520px){
+  .signup-form .field{font-size:16px}
+  .signup-form .field-label{font-size:13px}
+  .signup-form .consent{font-size:13px}
+  .hero-editorial-paper strong{overflow-wrap:anywhere}
+}
