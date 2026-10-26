@@ -306,3 +306,21 @@ h1 em,h2 em{font-weight:400}h2{letter-spacing:-.02em}
   .real-app .app-preview-note{margin-top:14px}
   .real-app .section-title{font-size:44px}
 }
+
+/* Universo Lune: prefer genuine photos; never present campaign placeholders as real imagery. */
+.universe:not(.has-real-photos) .universe-gallery{display:none}
+.universe:not(.has-real-photos) .universe-grid{grid-template-columns:minmax(0,870px);justify-content:center}
+.universe:not(.has-real-photos) .universe-copy{max-width:830px}
+.universe.has-real-photos .universe-grid{align-items:center}
+.universe.has-real-photos .photo-main img{object-position:50% 50%}
+.universe.has-real-photos .photo-knits img{object-position:53% 44%}
+.universe.has-real-photos .photo-look img{object-position:48% 43%}
+.universe.has-real-photos .photo-detail img{object-position:50% 43%}
+.universe.has-real-photos .femme-photo{border-radius:18px}
+@media(max-width:780px){
+  .universe.has-real-photos .universe-grid{grid-template-columns:1fr}
+}
+@media(max-width:520px){
+  .universe.has-real-photos .universe-gallery{grid-template-rows:370px 175px 165px}
+  .universe.has-real-photos .photo-detail img{object-position:50% 42%}
+}
