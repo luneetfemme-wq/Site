@@ -1,3 +1,4 @@
 User-agent: *
 Allow: /
+Disallow: /obrigada.html
 Sitemap: https://lune.pt/sitemap.xml

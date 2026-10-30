@@ -21,6 +21,15 @@ if (form) {
     if (!submit) return;
 
     status.textContent = '';
+
+    // Respect required fields and explicit consent before sending any data.
+    // novalidate stays on the form so errors can be controlled here.
+    if (!form.checkValidity()) {
+      form.reportValidity();
+      status.textContent = 'Verifica os campos obrigatórios e o consentimento antes de continuar.';
+      return;
+    }
+
     submit.disabled = true;
     submit.textContent = 'A enviar…';
 
@@ -29,7 +38,9 @@ if (form) {
       nome: String(data.get('nome') || '').trim(),
       email: String(data.get('email') || '').trim(),
       fase: String(data.get('fase') || '').trim(),
+      confirmacao_maioridade: data.get('confirmacao_maioridade') === 'on',
       consentimento_dados_saude: data.get('consentimento_dados_saude') === 'on',
+      consentimento_melhoria: data.get('consentimento_melhoria') === 'on',
       consentimento_marketing: data.get('consentimento_marketing') === 'on',
       website: String(data.get('website') || '').trim()
     };
@@ -50,7 +61,11 @@ if (form) {
 
       window.location.href = 'obrigada.html';
     } catch (error) {
-      status.textContent = error.message || 'Não foi possível concluir a inscrição. Tenta novamente.';
+      // Provide an actionable message for temporary network/CORS/offline failures.
+      const wasNetworkError = error instanceof TypeError || error?.name === 'AbortError';
+      status.textContent = wasNetworkError
+        ? 'Não foi possível contactar o servidor. Verifica a ligação à internet, atualiza a página e tenta novamente. Se o erro continuar, escreve para luneetfemme@gmail.com.'
+        : (error?.message || 'Não foi possível concluir a inscrição. Tenta novamente. Se o erro continuar, escreve para luneetfemme@gmail.com.');
       submit.disabled = false;
       submit.textContent = originalLabel;
     }
