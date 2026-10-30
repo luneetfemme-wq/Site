@@ -1,0 +1,13 @@
+# Evitar formularios antigos em cache depois de atualizacoes de seguranca
+/
+  Cache-Control: no-store, max-age=0
+/index.html
+  Cache-Control: no-store, max-age=0
+/app.js
+  Cache-Control: no-cache, max-age=0, must-revalidate
+/media.js
+  Cache-Control: no-cache, max-age=0, must-revalidate
+/privacidade.html
+  Cache-Control: no-store, max-age=0
+/obrigada.html
+  Cache-Control: no-store, max-age=0
