@@ -61,7 +61,11 @@ if (form) {
 
       window.location.href = 'obrigada.html';
     } catch (error) {
-      status.textContent = error.message || 'Não foi possível concluir a inscrição. Tenta novamente.';
+      // Provide an actionable message for temporary network/CORS/offline failures.
+      const wasNetworkError = error instanceof TypeError || error?.name === 'AbortError';
+      status.textContent = wasNetworkError
+        ? 'Não foi possível contactar o servidor. Verifica a ligação à internet, atualiza a página e tenta novamente. Se o erro continuar, escreve para luneetfemme@gmail.com.'
+        : (error?.message || 'Não foi possível concluir a inscrição. Tenta novamente. Se o erro continuar, escreve para luneetfemme@gmail.com.');
       submit.disabled = false;
       submit.textContent = originalLabel;
     }
