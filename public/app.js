@@ -40,6 +40,7 @@ if (form) {
       fase: String(data.get('fase') || '').trim(),
       confirmacao_maioridade: data.get('confirmacao_maioridade') === 'on',
       consentimento_dados_saude: data.get('consentimento_dados_saude') === 'on',
+      consentimento_melhoria: data.get('consentimento_melhoria') === 'on',
       consentimento_marketing: data.get('consentimento_marketing') === 'on',
       website: String(data.get('website') || '').trim()
     };
