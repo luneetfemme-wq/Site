@@ -4,6 +4,13 @@ const status = document.getElementById("form-status");
 const submit = document.getElementById("submit");
 const success = document.getElementById("success");
 const originalLabel = submit.textContent;
+// Permite abertura diretamente de uma campanha destinada a determinada especialidade.
+const requestedArea = new URLSearchParams(window.location.search).get("area");
+const areaField = form?.elements?.namedItem("area_profissional");
+if (areaField && requestedArea && [...areaField.options].some(o => o.value === requestedArea)) {
+  areaField.value = requestedArea;
+}
+
 let isSubmitting = false;
 
 form.addEventListener("submit", async (event) => {
@@ -56,3 +63,6 @@ form.addEventListener("submit", async (event) => {
     isSubmitting = false;
   }
 });
+
+// Só ativar o envio depois de os eventos e validações estarem associados.
+submit.disabled = false;
