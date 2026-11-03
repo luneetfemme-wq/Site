@@ -102,7 +102,7 @@
         </div>
 
         <div class="form-card">
-          <form id="partner-form" novalidate>
+          <form id="partner-form" method="post" action="/parcerias.html" novalidate>
             <h3>Apresenta a tua proposta</h3>
             <p class="form-lead">Os campos assinalados com * são obrigatórios.</p>
             <label for="nome">Nome completo *</label>
@@ -153,7 +153,8 @@
 
             <label class="consent"><input type="checkbox" name="informacao_privacidade_lida" required><span>Li a <a href="/privacidade-parcerias.html" target="_blank" rel="noopener noreferrer">informação de privacidade para parceiros</a> e compreendo que os meus dados serão tratados para analisar e responder à proposta. *</span></label>
             <div id="form-status" class="form-status" role="status" aria-live="polite"></div>
-            <button id="submit" class="button button-primary submit" type="submit">Enviar proposta de colaboração <span aria-hidden="true">↗</span></button>
+            <button id="submit" class="button button-primary submit" type="submit" disabled>Enviar proposta de colaboração <span aria-hidden="true">↗</span></button>
+            <noscript><p class="form-status">Para enviar a proposta, ativa o JavaScript no navegador ou escreve para luneetfemme@gmail.com.</p></noscript>
             <p class="form-disclaimer">O envio da proposta não implica aceitação nem compromisso de colaboração.</p>
           </form>
           <div class="success" id="success" hidden tabindex="-1" role="status">
