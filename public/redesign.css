@@ -340,3 +340,14 @@ h1 em,h2 em{font-weight:400}h2{letter-spacing:-.02em}
   .signup-form .consent{font-size:13px}
   .hero-editorial-paper strong{overflow-wrap:anywhere}
 }
+
+/* Invitation for professional contributors */
+.partner-invite{background:#fff;padding:96px 0;border-top:1px solid var(--l-line);border-bottom:1px solid var(--l-line)}
+.partner-invite-inner{display:flex;justify-content:space-between;align-items:center;gap:58px}
+.partner-invite-inner>div{max-width:770px}
+.partner-invite h2{font-size:clamp(43px,4.5vw,64px);line-height:1.06;letter-spacing:-.025em;margin:14px 0 19px}
+.partner-invite h2 em{color:var(--l-rose)}
+.partner-invite p{color:var(--l-muted);font-size:15px;line-height:1.8;max-width:780px}
+.partner-invite .btn{flex:0 0 auto;text-align:center}
+@media(max-width:850px){.partner-invite{padding:69px 0}.partner-invite-inner{align-items:flex-start;flex-direction:column;gap:19px}.partner-invite h2{font-size:clamp(45px,8vw,59px)}.partner-invite .btn{width:auto}}
+@media(max-width:520px){.partner-invite .btn{width:100%}.partner-invite h2{font-size:46px}}
