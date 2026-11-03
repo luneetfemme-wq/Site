@@ -1,0 +1,46 @@
+# Evitar formularios antigos em cache depois de atualizacoes de seguranca
+/
+  Cache-Control: no-store, max-age=0
+/index.html
+  Cache-Control: no-store, max-age=0
+/app.js
+  Cache-Control: no-cache, max-age=0, must-revalidate
+/media.js
+  Cache-Control: no-cache, max-age=0, must-revalidate
+/privacidade.html
+  Cache-Control: no-store, max-age=0
+/obrigada.html
+  Cache-Control: no-store, max-age=0
+
+# A area de gestao nunca deve ser indexada nem guardada em caches partilhadas
+/gestao-beta
+  Cache-Control: private, no-store, max-age=0
+  X-Robots-Tag: noindex, nofollow, noarchive
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: no-referrer
+/gestao-beta.html
+  Cache-Control: private, no-store, max-age=0
+  X-Robots-Tag: noindex, nofollow, noarchive
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: no-referrer
+/gestao-beta.js
+  Cache-Control: no-cache, max-age=0, must-revalidate
+  X-Robots-Tag: noindex
+/gestao-beta.css
+  Cache-Control: no-cache, max-age=0, must-revalidate
+  X-Robots-Tag: noindex
+
+# Professional partnership application: fresh HTML and JavaScript
+/parcerias
+  Cache-Control: no-store, max-age=0
+  X-Content-Type-Options: nosniff
+/parcerias.html
+  Cache-Control: no-store, max-age=0
+  X-Content-Type-Options: nosniff
+/parcerias.js
+  Cache-Control: no-cache, max-age=0, must-revalidate
+/parcerias.css
+  Cache-Control: no-cache, max-age=0, must-revalidate
+/privacidade-parcerias.html
+  Cache-Control: no-store, max-age=0
+  X-Robots-Tag: noindex, follow

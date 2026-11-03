@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow, noarchive">
+  <meta name="referrer" content="no-referrer">
+  <meta name="theme-color" content="#F6F1EC">
+  <title>Gestão da Beta — Lune</title>
+  <meta name="description" content="Acesso reservado à gestão interna de candidaturas da Lune Beta.">
+  <link rel="icon" href="/assets/logo-moon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/gestao-beta.css?v=1">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="/" aria-label="Lune — página inicial"><img src="/assets/logo-moon.svg" alt=""> <span>lune.</span></a>
+    <span class="toplabel">GESTÃO DA BETA</span>
+    <button type="button" id="logout" class="button button-minor" hidden>Terminar sessão</button>
+  </header>
+  <main class="shell">
+    <div id="notice" class="notice" role="status" aria-live="polite" hidden></div>
+    <section id="login" class="signin-card" aria-labelledby="login-title">
+      <div class="eyebrow">ACESSO RESTRITO</div>
+      <h1 id="login-title">Um espaço seguro para gerir a Beta.</h1>
+      <p>Área reservada à responsável pela Lune. As candidaturas e os dados de saúde não são públicos.</p>
+      <form id="password-form">
+        <label for="email">Email da conta de gestão</label>
+        <input type="email" id="email" autocomplete="username" required placeholder="teu@email.com">
+        <label for="password">Palavra-passe</label>
+        <input type="password" id="password" autocomplete="current-password" required placeholder="A tua palavra-passe">
+        <button class="button button-primary" type="submit">Entrar</button>
+      </form>
+      <div class="signin-divider">OU</div>
+      <button type="button" class="button button-outline" id="magic">Enviar ligação de acesso por email</button>
+      <p class="small">Se não te recordares da palavra-passe, utiliza a ligação por email. Apenas a conta autorizada poderá consultar candidaturas, mesmo que outra pessoa consiga iniciar sessão.</p>
+    </section>
+
+    <section id="dashboard" hidden>
+      <div class="hero">
+        <div>
+          <div class="eyebrow">PAINEL PRIVADO</div>
+          <h1>Candidaturas à Lune Beta</h1>
+          <p>Consulta as inscrições, acompanha os grupos e atualiza o estado das candidaturas.</p>
+        </div>
+        <div class="hero-actions"><span class="identity" id="identity"></span><button type="button" class="button button-outline" id="reload">Atualizar dados</button></div>
+      </div>
+
+      <div class="metrics" aria-label="Resumo das candidaturas">
+        <div class="metric"><span>Inscrições</span><strong id="m-total">—</strong></div>
+        <div class="metric"><span>Pendentes</span><strong id="m-pendente">—</strong></div>
+        <div class="metric"><span>Convidadas</span><strong id="m-convidada">—</strong></div>
+        <div class="metric"><span>Ativas</span><strong id="m-ativa">—</strong></div>
+      </div>
+
+      <section class="panel">
+        <div class="panel-heading">
+          <div><h2>Lista de candidatas</h2><p id="filtered-count">A obter dados…</p></div>
+          <div class="filters">
+            <label>Procurar<input type="search" id="search" placeholder="Nome ou email" autocomplete="off"></label>
+            <label>Estado<select id="filter-status"><option value="">Todos os estados</option><option value="pendente">Pendente</option><option value="convidada">Convidada</option><option value="ativa">Ativa</option><option value="concluida">Concluída</option><option value="recusada">Recusada</option></select></label>
+            <label>Fase<select id="filter-phase"><option value="">Todas as fases</option></select></label>
+          </div>
+        </div>
+        <div class="tablewrap">
+          <table>
+            <thead><tr><th>Participante</th><th>Fase indicada</th><th>Candidatura</th><th>Estado</th><th>Revisão de dados</th></tr></thead>
+            <tbody id="rows"></tbody>
+          </table>
+        </div>
+        <p id="empty" class="empty" hidden>Não existem candidaturas correspondentes aos filtros.</p>
+      </section>
+      <div class="footnotes">
+        <p>Alterar um estado <strong>não envia emails automaticamente</strong>. Os convites devem ser enviados separadamente e apenas para a finalidade autorizada.</p>
+        <p>Informação confidencial: evita abrir este painel em dispositivos partilhados. Não copies nem partilhes dados identificáveis ou informação de saúde sem base legal adequada.</p>
+      </div>
+    </section>
+  </main>
+  <script type="module" src="/gestao-beta.js?v=1"></script>
+</body>
+</html>
